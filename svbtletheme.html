@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- Svbtle Theme for Tumblr by matteoroversi.com -->
+<!-- Customized for tunafish.es -->
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -35,95 +36,7 @@
         <meta name="text:Google Analytics ID" content="" />
         <meta name="text:Disqus Shortname" content="" />
         <meta name="if:Enable Comment Count" content="1" />
-        <!-- For Syntax Highlighting -->
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>
-        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
-        <script>
-            function styleCode() {
-                if (typeof disableStyleCode != 'undefined') { return; }
 
-                var a = false;
-
-                $('code').each(function() {
-                    if (!$(this).hasClass('prettyprint') && !$(this).hasClass('uglyprint')) {
-                        $(this).addClass('prettyprint');
-                        a = true;
-                    }
-                });
-
-                if (a) { prettyPrint(); }
-            }
-
-            $(function() {styleCode();});
-        </script>
-        <!-- Facebook Open Graph -->
-        <meta property="og:site_name" content="{Title}"/>
-        {block:PermalinkPage}
-            <meta property="og:url" content="{Permalink}"/>
-            <meta property="og:type" content="article"/>
-            {block:Posts}
-                {block:Text}
-                    {block:Title}
-                        <meta property="og:title" content="{PlaintextTitle}"/>
-                    {/block:Title}
-                    <meta property="og:description" content="{PlaintextBody}"/>
-                    <meta property="og:image" content="{PortraitURL-128}"/>
-                {/block:Text}
-                {block:Photo}
-                    <meta property="og:image" content="{PhotoURL-500}"/>
-                    {block:Caption}
-                        <meta property="og:description" content="{PlaintextCaption}"/>
-                    {/block:Caption}
-                {/block:Photo}
-                {block:Photoset}
-                    {block:Photos}
-                        <meta property="og:image" content="{PhotoURL-500}"/>
-                    {/block:Photos}
-                    {block:Caption}
-                        <meta property="og:description" content="{PlaintextCaption}"/>
-                    {/block:Caption}
-                {/block:Photoset}
-                {block:Quote}
-                    <meta property="og:title" content="{PlaintextQuote}"/>
-                    <meta property="og:description" content="{PlaintextSource}"/>
-                    <meta property="og:image" content="{PortraitURL-128}"/>
-                {/block:Quote}
-                {block:Link}
-                    <meta property="og:title" content="{PlaintextName}"/>
-                    <meta property="og:description" content="{PlaintextDescription}"/>
-                    <meta property="og:image" content="{PortraitURL-128}"/>
-                {/block:Link}
-                {block:Chat}
-                    <meta property="og:title" content="{PlaintextTitle}"/>
-                    <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
-                    <meta property="og:image" content="{PortraitURL-128}"/>
-                {/block:Chat}
-                {block:Audio}
-                    <meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
-                    <meta property="og:description" content="{PlaintextCaption}"/>
-                    {block:AlbumArt}
-                        <meta property="og:image" content="{AlbumArtURL}"/>
-                    {/block:AlbumArt}
-                {/block:Audio}
-                {block:Video}
-                    {block:Caption}
-                        <meta property="og:description" content="{PlaintextCaption}"/>
-                    {/block:Caption}
-                {/block:Video}
-                {block:Answer}
-                    <meta property="og:title" content="{PlaintextQuestion}"/>
-                    <meta property="og:description" content="{PlaintextAnswer}"/>
-                    <meta property="og:image" content="{PortraitURL-128}"/>
-                {/block:Answer}
-            {/block:Posts}
-        {/block:PermalinkPage}
-        {block:IndexPage}
-            <meta property="og:title" content="{Title}"/>
-            <meta property="og:type" content="blog"/>
-            <meta property="og:description" content="{MetaDescription}"/>
-            <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:IndexPage}
         <!-- CSS -->
         <style type="text/css">
             /* General Settings */
@@ -663,17 +576,7 @@
         </style>
     </head>
     <body>
-        <!-- Facebook Script -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/ca_EN/all.js#xfbml=1";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        <!-- Sidebar
-        ---------------------------------->
+        <!-- Sidebar -->
         <div id="sidebar">
             <!-- Logo -->
             <div class="logo">
@@ -695,8 +598,7 @@
                 {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
             </div>
         </div>
-        <!-- Main Content
-        ---------------------------------->
+        <!-- Main Content -->
         <div id="main">
         {block:Posts}
             <!-- Photo -->
@@ -900,14 +802,6 @@
             {/block:Link}
             <!-- Post Footer -->
             {block:PermalinkPage}
-            <div id="social">
-                <div class="social_links">
-                    <div class="g-plusone" data-size="medium"></div>
-                    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                    <div class="fb-like" data-send="false" data-layout="button_count"></div>
-                </div>
-            </div>
             <div id="postfooter">
                 {block:IfDisqusShortname}
                     {block:Permalink}
@@ -955,25 +849,4 @@
 		}());
 	</script>
 	{/block:IfDisqusShortname}
-    <!-- Google Analytics -->
-    {block:IfGoogleAnalyticsID}
-    <script>
-        var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-	{/block:IfGoogleAnalyticsID}
-    <!-- Google Plusone -->
-    <script type="text/javascript">
-        (function() {
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = 'https://apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
-    </script>
 </html>
